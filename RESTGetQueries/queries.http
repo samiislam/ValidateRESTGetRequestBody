@@ -1,0 +1,134 @@
+
+// Input: "id = null"
+// Output: "id = null"
+http://localhost:5000/m_1param
+
+###
+// Input: "id = 42"
+// Output: "id = 42"
+http://localhost:5000/m_1param?id=42
+
+###
+// Input: "id = null"
+// Output: "One or more validation errors occurred. The Id field is required."
+http://localhost:5000/m_1paramR
+
+###
+// Input: "id = null", "firstname = null", "lastname = null"
+// Output: "id = null", "firstname = null", "lastname = null"
+http://localhost:5000/m_3param
+
+###
+// Input: "id = 42", "firstname = null", "lastname = null"
+// Output: "id = 42", "firstname = null", "lastname = null"
+http://localhost:5000/m_3param?id=42
+
+###
+// Input: "id = 42", "firstname= John", "lastname = null"
+// Output: "id = 42", "firstname = John", "lastname = null"
+http://localhost:5000/m_3param?id=42&firstname=John
+
+###
+// Input: "id = 42", "firstname= John", "lastname = Doe"
+// Output: "id = 42", "firstname = John", "lastname = Doe"
+http://localhost:5000/m_3param?id=42&firstname=John&lastname=Doe
+
+###
+// Input: "id = null", "firstname = null", "lastname = null"
+// Output: "id = null", "firstname = null", "lastname = null"
+http://localhost:5000/m_rm
+
+###
+// Input: "id = 42", "firstname = null", "lastname = null"
+// Output: "id = 42", "firstname = null", "lastname = null"
+http://localhost:5000/m_rm?id=42
+
+###
+// Input: "id = 42", "firstname = John", "lastname = null"
+// Output: "id = 42", "firstname = John", "lastname = null"
+http://localhost:5000/m_rm?id=42&firstname=John
+
+###
+// Input: "id = 42", "firstname = John", "lastname = Doe"
+// Output: "id = 42", "firstname = John", "lastname = Doe"
+http://localhost:5000/m_rm?id=42&firstname=John&lastname=Doe
+
+###
+// Input: "id = null", "firstname = null", "lastname = null"
+// Output: "One or more validation errors occurred. The Id field is required."
+http://localhost:5000/m_rm_bv
+
+###
+// Input: "id = 42", "firstname = null", "lastname = null"
+// Output: "id = 42", "firstname = null", "lastname = null"
+http://localhost:5000/m_rm_bv?id=42
+
+###
+// Input: "id = 42", "firstname = John", "lastname = null"
+// Output: "id = 42", "firstname = John", "lastname = null"
+http://localhost:5000/m_rm_bv?id=42&firstname=John
+
+###
+// Input: "id = 42", "firstname = John", "lastname = Doe"
+// Output: "id = 42", "firstname = John", "lastname = Doe"
+http://localhost:5000/m_rm_bv?id=42&firstname=John&lastname=Doe
+
+###
+// Input: "id = null", "firstname = null", "lastname = null"
+// Output: "id = null", "firstname = null", "lastname = null"
+http://localhost:5000/m_rm_classv
+
+###
+// Input: "id = 42", "firstname = null", "lastname = null"
+// Output: Invalid
+http://localhost:5000/m_rm_classv?id=42
+
+###
+// Input: "id = 42", "firstname = John", "lastname = null"
+// Output: "id = 42", "firstname = John", "lastname = null"
+http://localhost:5000/m_rm_classv?id=42&firstname=John
+
+###
+// Input: "id = 42", "firstname = null", "lastname = Doe"
+// Output: "id = 42", "firstname = null", "lastname = Doe"
+http://localhost:5000/m_rm_classv?id=42&lastname=Doe
+
+###
+// Input: "id = null", "firstname = null", "lastname = null"
+// Output: "id = null", "firstname = null", "lastname = null"
+http://localhost:5000/m_rm_cv
+
+###
+// Input: "id = 42", "firstname = null", "lastname = null"
+// Output: "id = 42", "firstname = null", "lastname = null"
+http://localhost:5000/m_rm_cv?id=42
+
+###
+// Input: "id = 42", "firstname = John", "lastname = null"
+// Output: "id = 42", "firstname = John", "lastname = null"
+http://localhost:5000/m_rm_cv?id=42&firstname=John
+
+###
+// Input: "id = 42", "firstname = John", "lastname = Doe"
+// Output: "id = 42", "firstname = John", "lastname = Doe"
+http://localhost:5000/m_rm_cv?id=42&firstname=John&lastname=Doe
+
+###
+// Input: "id = 42", "firstname = John", "lastname = Doe", "maritalstatus = unknown"
+// Output: Invalid
+http://localhost:5000/m_rm_cv?id=42&firstname=John&lastname=Doe&maritalstatus=unknown
+
+###
+// Input: "id = 42", "firstname = John", "lastname = Doe", "maritalstatus = married"
+// Output: "id = 42", "firstname = John", "lastname = Doe"
+http://localhost:5000/m_rm_cv?id=42&firstname=John&lastname=Doe&maritalstatus=married
+
+###
+// Input: "id = 42", "firstname = John", "lastname = Doe", "maritalstatus = married", "spousefirstname = Fred"
+// Output: Invalid
+http://localhost:5000/m_rm_cv?id=42&firstname=John&lastname=Doe&maritalstatus=married&spousefirstname=Fred
+
+###
+// Input: "id = 42", "firstname = John", "lastname = Doe", "maritalstatus = married", "spousefirstname = Fred", "spouselastname = Doe"
+// Output: "id = 42", "firstname = John", "lastname = Doe"
+http://localhost:5000/m_rm_cv?id=42&firstname=John&lastname=Doe&maritalstatus=married&spousefirstname=Fred&spouselastname=Doe

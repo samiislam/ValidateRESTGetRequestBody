@@ -132,3 +132,17 @@ http://localhost:5000/m_rm_cv?id=42&firstname=John&lastname=Doe&maritalstatus=ma
 // Input: "id = 42", "firstname = John", "lastname = Doe", "maritalstatus = married", "spousefirstname = Fred", "spouselastname = Doe"
 // Output: "id = 42", "firstname = John", "lastname = Doe"
 http://localhost:5000/m_rm_cv?id=42&firstname=John&lastname=Doe&maritalstatus=married&spousefirstname=Fred&spouselastname=Doe
+
+###
+// Input: { "id" : "42", "firstname" : "John", "lastname" : "Doe", "maritalstatus" : 1, "spousefirstname" : "Fred" }
+// Output: Invalid
+http://localhost:5000/m_rm_cv_b
+Content-Type: application/json
+
+{
+    "id" : "42",
+    "firstname" : "John",
+    "lastname" : "Doe",
+    "maritalstatus" : 1,
+    "spousefirstname" : "Fred"
+}

@@ -59,8 +59,14 @@ namespace WebAPI.Controllers
         [Route("m_rm_cv")]
         public IActionResult Method_RequestModelWithCustomValidationAttribute([FromQuery] RequestWithCustomValidationAttribute request)
         {
-            return Ok($"{nameof(Method_RequestModelWithClassLevelValidation)}:\nid = {request.Id??"null"}\nfirstname = {request.FirstName??"null"}\nlastname = {request.LastName??"null"}\nmaritalstatus = {request.MaritalStatus}\nspouse firstname = {request.SpouseFirstName??"null"}\nspouse lastname = {request.SpouseLastName??"null"}");
+            return Ok($"{nameof(Method_RequestModelWithCustomValidationAttribute)}:\nid = {request.Id??"null"}\nfirstname = {request.FirstName??"null"}\nlastname = {request.LastName??"null"}\nmaritalstatus = {request.MaritalStatus}\nspouse firstname = {request.SpouseFirstName??"null"}\nspouse lastname = {request.SpouseLastName??"null"}");
         }
 
+        [HttpGet]
+        [Route("m_rm_cv_b")]
+        public IActionResult Method_RequestModelWithCustomValidationAttributeB([FromBody] RequestWithCustomValidationAttribute request)
+        {
+            return Ok($"{nameof(Method_RequestModelWithCustomValidationAttributeB)}:\nid = {request.Id??"null"}\nfirstname = {request.FirstName??"null"}\nlastname = {request.LastName??"null"}\nmaritalstatus = {request.MaritalStatus}\nspouse firstname = {request.SpouseFirstName??"null"}\nspouse lastname = {request.SpouseLastName??"null"}");
+        }
     }
 }

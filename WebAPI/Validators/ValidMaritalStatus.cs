@@ -10,12 +10,6 @@ namespace WebAPI.Requests
             var maritalStatus = (MaritalStatus)value;
             var requestWithCustomValidationAttribute = (RequestWithCustomValidationAttribute)validationContext.ObjectInstance;
 
-            // validate that the MaritalStatus property is a valid Enum value
-            if (!Enum.IsDefined(typeof(MaritalStatus), maritalStatus))
-            {
-                return new ValidationResult($"MaritalStatus contains an invalid value: {maritalStatus}");
-            }
-
             // if "married" then the spouse first and last name must be present
             if (maritalStatus == MaritalStatus.Married)
             {
